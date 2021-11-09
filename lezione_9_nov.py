@@ -18,3 +18,9 @@ while abs(g_y * g_y - y) > 0.00001:
 print('La radice quadrata di X è:', g_x)
 print('La radice quadrata di Y è:', g_y)
 print('La radice quadrata di X + Y è:', g_x + g_y)
+
+def radice_quadrata(a):
+    g = 5.0
+    while abs(g * g - a) > 0.00001:
+        g = 0.5 * (g + a/g)
+    return g
