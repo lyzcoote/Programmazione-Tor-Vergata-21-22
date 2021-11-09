@@ -7,28 +7,6 @@ Exercise:
     It is forbidden to use the operator **.
 """
 
-
-def sqrt_x(x):
-    """
-    Returns the square root of x using power.
-    """
-    return x ** 0.5
-
-
-def sqrt_y(y):
-    """
-    Returns the square root of y using power.
-    """
-    return y ** 0.5
-
-
-def sqrt_sum_using_power(x, y):
-    """
-    Returns the square root of x added to the square root of y using power.
-    """
-    return sqrt_x(x) + sqrt_y(y)
-
-
 def sqrt_x_without_power(x):
     """
     Returns the square root of x without using power.
@@ -70,8 +48,5 @@ if __name__ == '__main__':
     """
     Main function.
     """
-    print("Running exercise using ** operator.")
-    print(sqrt_sum_using_power(float(input("x value: ")), float(input("y value: "))))
-    print("\n")
     print("Running exercise without using ** operator.")
     print(sqrt_sum_without_power(float(input("x value: ")), float(input("y value: "))))
