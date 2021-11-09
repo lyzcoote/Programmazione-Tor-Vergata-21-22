@@ -1,23 +1,77 @@
-# -*- coding: utf-8 -*-
 """
-Created on Thu Oct 14 15:21:17 2021
-@original author: gianluca
-@student: Wraith (Flavio Fois)
+Exercise Author: Gainluca Rossi
+Student: Flavio Fois
+Date: 7th of November 2021
+Exercise:
+    Program that asks for two x and y numbers in input and prints the square root of x added to the square root of y.
+    It is forbidden to use the operator **.
 """
 
-# Creating two variables for the abs function
-x = 20
-g = 5.0
 
-# Printing the original value of G
-print("Valore iniziale di G: ",g)
-# Starting the while cycle
-while abs(g * g - x) > 0.00001:        # Checking if the absolute value of the formula (g*g-x) is higher than 0.00001
-	# Setting a new value of G
-	g = 0.5 * (g + x / g)
-	# Printing the new value of G
-	print(g)
+def sqrt_x(x):
+    """
+    Returns the square root of x using power.
+    """
+    return x ** 0.5
 
-# If the G absolute value is not higher than 0.00001, then the while cycle ends
-# Printing the Square Root value of X, aka G
-print("La radice quadrata di", x, "e'", g)
+
+def sqrt_y(y):
+    """
+    Returns the square root of y using power.
+    """
+    return y ** 0.5
+
+
+def sqrt_sum_using_power(x, y):
+    """
+    Returns the square root of x added to the square root of y using power.
+    """
+    return sqrt_x(x) + sqrt_y(y)
+
+
+def sqrt_x_without_power(x):
+    """
+    Returns the square root of x without using power.
+    """
+    if 0 == x:
+        return 0        # Avoid division by zero
+    n = (x / 2) + 1     # Initial estimate, never low
+    n1 = (n + (x / n)) / 2
+    while n1 < n:
+        n = n1
+        n1 = (n + (x / n)) / 2
+        result_x = n
+    return result_x
+
+
+def sqrt_y_without_power(y):
+    """
+    Returns the square root of y without using power.
+    """
+    if 0 == y:
+        return 0        # Avoid division by zero
+    n = (y / 2) + 1     # Initial estimate, never low
+    n1 = (n + (y / n)) / 2
+    while n1 < n:
+        n = n1
+        n1 = (n + (y / n)) / 2
+        result_y = n
+    return result_y
+
+
+def sqrt_sum_without_power(x, y):
+    """
+    Returns the square root of x added to the square root of y without using power.
+    """
+    return sqrt_x_without_power(x) + sqrt_y_without_power(y)
+
+
+if __name__ == '__main__':
+    """
+    Main function.
+    """
+    print("Running exercise using ** operator.")
+    print(sqrt_sum_using_power(float(input("x value: ")), float(input("y value: "))))
+    print("\n")
+    print("Running exercise without using ** operator.")
+    print(sqrt_sum_without_power(float(input("x value: ")), float(input("y value: "))))
