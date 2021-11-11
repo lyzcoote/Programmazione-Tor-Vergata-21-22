@@ -12,7 +12,7 @@ def radice_quadrata(a, err = 0.000001):
         g = 0.5 * (g + a/g)
     return g
 
-r_x, r_y = radice_quadrata(x, 1**-12), radice_quadrata(y)
+r_x, r_y = radice_quadrata(x, 10**-12), radice_quadrata(y)
 
 print('La radice quadrata di X è:', r_x)
 print('La radice quadrata di Y è:', r_y)
