@@ -48,3 +48,4 @@ if __name__ == '__main__':
     print(c)
     print("\nPrinting original b values")
     print(b)
+    id(b)
