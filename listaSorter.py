@@ -22,4 +22,4 @@ def listaSorter(listaA):
     miniListaD.sort()
     return miniListaB + miniListaC + miniListaD
 
-print(listaSorter([7, 23, 5, "ciao", 1, "istanza", 69, "credenziali"]))
+print(listaSorter([7, 23, 5, "ciao", 1, "istanza", "bob",  69, "credenziali"]))
